@@ -81,9 +81,6 @@
 
 
 
-  <meta property="fb:admins" content>
-  <meta property="fb:app_id" content>
-
 
 
 <meta property="og:type" content="website">
@@ -131,24 +128,6 @@
 
   <title>about | lcan-blogs</title>
   
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '',
-      xfbml      : true,
-      version    : 'v2.10'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/zh_Hans/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
-
 
 
 
@@ -320,8 +299,9 @@
 
   
     <div class="comments" id="comments">
-      <div class="fb-comments" data-href="https://lcan520.github.io/about/index.html" data-numposts="10" data-width="100%" data-colorscheme="light">
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -568,6 +548,43 @@
 
 
 
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: '35168172',
+            repo: 'lcan520.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: 'c5aac00787756658c8b6475578f9f08bac928a69',
+            
+                client_id: '3f43ab68594ed4bfc740'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
 
 
 
